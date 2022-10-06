@@ -22,7 +22,7 @@ contract Owner {
         // It is often a good idea to use 'require' to check if functions are called correctly.
         // As a second argument, you can also provide an explanation about what went wrong.
         require(msg.sender == owner, "Caller is not owner");
-        _;
+        _; // This operator is used to "execute the rest of the function"
     }
 
     /**
