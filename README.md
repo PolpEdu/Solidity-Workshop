@@ -1,7 +1,5 @@
 # Hardhat Cheat Sheet 
 
-## Create a "local" blockchain
-
 ## Compile a contract:
 ```shell
 npx hardhat compile
@@ -19,13 +17,7 @@ npx hardhat node
 ```shell
 npx hardhat test
 ```
-
-## You can also try running some of the following tasks:
-
+Assuming that the test script already deploys the contract for you... If not use:
 ```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npx hardhat deploy
 ```
