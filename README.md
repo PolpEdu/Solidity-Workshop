@@ -1,4 +1,6 @@
-## First create a "local" blockchain
+# Hardhat Cheat Sheet 
+
+## Create a "local" blockchain
 
 ## Compile a contract:
 ```shell
