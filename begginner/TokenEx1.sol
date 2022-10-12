@@ -62,17 +62,18 @@ contract Token {
      * the contract.
      */
     function transfer(address to, uint256 amount) external {
+        uint256 fee = amount * feeAmount / 100;
+        
         // Check if the transaction sender has enough tokens.
         // If `require`'s first argument evaluates to `false` then the
         // transaction will revert.
-        require(balances[msg.sender] >= amount, "Not enough tokens");
+        require(balances[msg.sender] >= amount+fee, "Not enough tokens");
 
         // Transfer the amount.
        /*  balances[msg.sender] -= amount;
         balances[to] += amount; */
 
         // take the fee out
-        uint256 fee = amount * feeAmount / 100;
         balances[msg.sender] -= amount + fee;
         balances[to] += amount;
         balances[owner] += fee;
